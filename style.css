@@ -149,3 +149,49 @@ section ul, section ol {
     .hero p { font-size: 1rem; }
     nav a { display: block; margin: 6px 0; }
 }
+
+/* Galerie & Cartes Réalisations */
+.galerie {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.carte-realisation {
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0, 51, 102, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.carte-realisation:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 40px rgba(0, 51, 102, 0.25);
+    background: rgba(255, 255, 255, 0.95);
+}
+
+.carte-realisation img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+.carte-realisation h3 {
+    color: #003366;
+    margin: 15px 15px 8px;
+    font-size: 1.1em;
+}
+
+.carte-realisation p {
+    color: #666;
+    margin: 0 15px 15px;
+    font-size: 0.95em;
+    line-height: 1.4;
+}
