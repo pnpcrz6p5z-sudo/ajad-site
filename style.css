@@ -94,3 +94,58 @@ button {
 button:hover {
     background: #005577;
 }
+
+/* Sections glassmorphism globaux */
+.section, .about {
+    background: rgba(255, 255, 255, 0.70);
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.16);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    margin-bottom: 30px;
+    border: 1px solid rgba(255,255,255,0.38);
+}
+
+/* Waves décoratives */
+.wave {
+    width: 100%;
+    height: 120px;
+    overflow: hidden;
+    margin-top: -2px;
+}
+
+.wave svg {
+    width: 100%;
+    height: 120px;
+}
+
+/* Harmonisation du site */
+.hero {
+    position: relative;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0, 51, 102, 0.6), rgba(0, 51, 102, 0.85));
+    mix-blend-mode: multiply;
+}
+
+section h2 {
+    margin-top: 0;
+}
+
+section p, section ul, section ol {
+    color: #1a1a1a;
+}
+
+section ul, section ol {
+    margin-left: 20px;
+}
+
+@media (max-width: 768px) {
+    .hero h1 { font-size: 2em; }
+    .hero p { font-size: 1rem; }
+    nav a { display: block; margin: 6px 0; }
+}
