@@ -1,10 +1,17 @@
 /* Styles pour le site AJAD */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     font-family: 'Montserrat', sans-serif;
     margin: 0;
     padding: 0;
     line-height: 1.6;
     color: #333;
+    background: linear-gradient(180deg, #e6eef9, #ffffff);
 }
 
 header {
@@ -12,12 +19,14 @@ header {
     color: white;
     padding: 20px;
     text-align: center;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.2);
 }
 
 nav {
     background: #f5f5f5;
-    padding: 10px;
+    padding: 10px 0;
     text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
 
 nav a {
@@ -25,11 +34,12 @@ nav a {
     text-decoration: none;
     color: #003366;
     font-weight: bold;
-    transition: color 0.3s;
+    transition: color 0.3s, transform 0.3s;
 }
 
 nav a:hover {
     color: #005577;
+    transform: translateY(-2px);
 }
 
 section {
@@ -47,30 +57,41 @@ section {
     justify-content: center;
     align-items: center;
     text-align: center;
+    position: relative;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 51, 102, 0.5);
 }
 
 .hero h1 {
     font-size: 2.5em;
     margin: 0;
+    z-index: 1;
 }
 
 .hero p {
     font-size: 1.2em;
-}
-
-.vision, .poles, .ambitions {
-    margin-bottom: 40px;
+    z-index: 1;
 }
 
 h2 {
     color: #003366;
     border-bottom: 2px solid #003366;
     padding-bottom: 10px;
+    margin-bottom: 15px;
 }
 
-ul {
-    list-style-type: disc;
+p, ul, ol {
+    color: #1a1a1a;
+}
+
+ul, ol {
     margin-left: 20px;
+    margin-bottom: 20px;
 }
 
 footer {
@@ -88,11 +109,12 @@ button {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background 0.3s;
+    transition: background 0.3s, transform 0.25s;
 }
 
 button:hover {
     background: #005577;
+    transform: translateY(-2px);
 }
 
 .cta-btn {
@@ -113,7 +135,6 @@ button:hover {
     background: #ff9e26;
 }
 
-/* Sections glassmorphism globaux */
 .section, .about {
     background: rgba(255, 255, 255, 0.70);
     border-radius: 20px;
@@ -124,7 +145,6 @@ button:hover {
     border: 1px solid rgba(255,255,255,0.38);
 }
 
-/* Waves décoratives */
 .wave {
     width: 100%;
     height: 120px;
@@ -137,38 +157,6 @@ button:hover {
     height: 120px;
 }
 
-/* Harmonisation du site */
-.hero {
-    position: relative;
-}
-
-.hero::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(180deg, rgba(0, 51, 102, 0.6), rgba(0, 51, 102, 0.85));
-    mix-blend-mode: multiply;
-}
-
-section h2 {
-    margin-top: 0;
-}
-
-section p, section ul, section ol {
-    color: #1a1a1a;
-}
-
-section ul, section ol {
-    margin-left: 20px;
-}
-
-@media (max-width: 768px) {
-    .hero h1 { font-size: 2em; }
-    .hero p { font-size: 1rem; }
-    nav a { display: block; margin: 6px 0; }
-}
-
-/* Galerie & Cartes Réalisations */
 .galerie {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -203,7 +191,7 @@ section ul, section ol {
 
 .carte-realisation h3 {
     color: #003366;
-    margin: 15px 15px 8px;
+    margin: 15px;
     font-size: 1.1em;
 }
 
@@ -213,199 +201,10 @@ section ul, section ol {
     font-size: 0.95em;
     line-height: 1.4;
 }
- {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
 
-        body {
-            font-family: 'Georgia', serif;
-            line-height: 1.6;
-            color: #333;
-        }
-
-        header {
-            background: linear-gradient(135deg, #1a3a52 0%, #2c5f7c 100%);
-            color: white;
-            padding: 2rem 0;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-        }
-
-        header p {
-            font-size: 1.1rem;
-            opacity: 0.9;
-        }
-
-        nav {
-            background: #f8f9f
-            padding: 1rem 0;
-            border-bottom : 3px solid #1a3a52;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        nav ul li {
-            margin: 0 1.5rem;
-        }
-
-        nav ul li a {
-            color: #1a3a52;
-            text-decoration: none;
-            font-weight: 600;
-            transition: color 0.3s;
-        }
-
-        nav ul li a:hover {
-            color: #2c5f7c;
-        }
-
-        .hero {
-            background: linear-gradient(rgba(26, 58, 82, 0.8), rgba(26, 58, 82, 0.8)),
-                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400"><rect fill="%23e8e8e8" width="1200" height="400"/></svg>');
-            background-size: cover;
-            color: white;
-            text-align: center;
-            padding: 4rem 2rem;
-        }
-
-        .hero h2 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-        }
-
-        .section {
-            padding: 3rem 2rem;
-        }
-
-        .section:nth-child(even) {
-            background: #f8f9fa;
-        }
-
-        .section h2 {
-            color: #1a3a52;
-            font-size: 2rem;
-            margin-bottom: 2rem;
-            text-align: center;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .service-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-        }
-
-        .service-card h3 {
-            color: #1a3a52;
-            margin-bottom: 1rem;
-            font-size: 1.3rem;
-        }
-
-        .service-card ul {
-            list-style: none;
-            padding-left: 0;
-        }
-
-        .service-card ul li {
-            padding: 0.5rem 0;
-            padding-left: 1.5rem;
-            position: relative;
-        }
-
-        .service-card ul li:before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: #2c5f7c;
-            font-weight: bold;
-        }
-
-        .contact-info {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .contact-card {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 8px;
-            border-left: 4px solid #1a3a52;
-        }
-
-        .contact-card h3 {
-            color: #1a3a52;
-            margin-bottom: 1rem;
-        }
-
-        .contact-card p {
-            margin: 0.5rem 0;
-        }
-
-        footer {
-            background: #1a3a52;
-            color: white;
-            text-align: center;
-            padding: 2rem;
-        }
-
-        .btn {
-            display: inline-block;
-            background: #2c5f7c;
-            color: white;
-            padding: 1rem 2rem;
-            border-radius: 5px;
-            text-decoration: none;
-            margin-top: 1rem;
-            transition: background 0.3s;
-        }
-
-        .btn:hover {
-            background: #1a3a52;
-        }
-
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 1.8rem;
-            }
-
-            nav ul {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            nav ul li {
-                margin: 0.5rem 0;
-            }
-        }
+@media (max-width: 768px) {
+    .hero h1 { font-size: 2em; }
+    .hero p { font-size: 1rem; }
+    nav a { display: block; margin: 6px 0; }
+    section { padding: 30px 10px; }
+}
